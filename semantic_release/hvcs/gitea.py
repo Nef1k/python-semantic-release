@@ -15,7 +15,7 @@ from semantic_release.cli.util import noop_report
 from semantic_release.errors import (
     AssetUploadError,
     IncompleteReleaseError,
-    UnexpectedResponse,https://github.com/Nef1k/python-semantic-release/edit/check-gitea-auth/semantic_release/hvcs/gitea.py
+    UnexpectedResponse,
 )
 from semantic_release.helpers import logged_function
 from semantic_release.hvcs.remote_hvcs_base import RemoteHvcsBase
