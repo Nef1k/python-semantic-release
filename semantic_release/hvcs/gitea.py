@@ -130,7 +130,7 @@ class Gitea(RemoteHvcsBase):
         releases_endpoint = self.create_api_url(
             endpoint=f"/repos/{self.owner}/{self.repo_name}/releases",
         )
-        log.info(f"releases_endpoint: {releases_endpoint}")
+        log.info(f"session headers: {self.session.headers}")
         response = self.session.post(
             releases_endpoint,
             json={
