@@ -48,7 +48,7 @@ class Gitea(RemoteHvcsBase):
     ) -> None:
         super().__init__(remote_url)
         self.token = token
-        log.debug(f"auth token: {token[:min(len(token), 6]}")
+        log.debug(f"auth token: {token[:min(len(token), 6)]}")
         auth = None if not self.token else TokenAuth(self.token)
         self.session = build_requests_session(auth=auth)
 
