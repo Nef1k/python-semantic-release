@@ -47,6 +47,8 @@ def build_requests_session(
     if auth:
         logger.debug("setting up default session authentication")
         session.auth = auth
+    else:
+        logger.warning("not using authentication for hvcs session")
 
     return session
 
