@@ -50,6 +50,8 @@ def build_requests_session(
     else:
         logger.debug("not using authentication for hvcs session")
 
+    logger.debug(f"setup a session. auth: {session.auth}")
+
     return session
 
 
