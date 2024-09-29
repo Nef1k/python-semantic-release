@@ -48,6 +48,7 @@ class Gitea(RemoteHvcsBase):
     ) -> None:
         super().__init__(remote_url)
         self.token = token
+        log.debug(f"auth token: {token[:min(len(token), 6)]}")
         auth = None if not self.token else TokenAuth(self.token)
         self.session = build_requests_session(auth=auth)
 
@@ -130,6 +131,7 @@ class Gitea(RemoteHvcsBase):
         releases_endpoint = self.create_api_url(
             endpoint=f"/repos/{self.owner}/{self.repo_name}/releases",
         )
+        log.info(f"session headers: {self.session.headers}")
         response = self.session.post(
             releases_endpoint,
             json={
